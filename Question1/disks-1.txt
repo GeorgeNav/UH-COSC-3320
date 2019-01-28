@@ -1,0 +1,4 @@
+Start -> 1 -> Aux1
+Aux1 -> 1 -> Aux2
+Aux2 -> 1 -> Aux3
+Aux3 -> 1 -> Dest

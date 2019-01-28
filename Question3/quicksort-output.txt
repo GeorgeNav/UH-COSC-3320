@@ -1,0 +1,50 @@
+
+QuickSort -> [1]
+             [1]
+    Total: 0 comparisons + 0 swaps = 0
+    Complexity: n*log2(n) = 1*log2(1) = 0
+
+QuickSort -> [1, 2, 3]
+             [1, 2, 3]
+    Total: 2 comparisons + 2 swaps = 4
+    Complexity: n*log2(n) = 3*log2(3) = 4.75489
+
+QuickSort -> [1, 2, 3, 5, 6, 4, 7]
+             [1, 2, 3, 4, 5, 6, 7]
+    Total: 11 comparisons + 8 swaps = 19
+    Complexity: n*log2(n) = 7*log2(7) = 19.6515
+
+QuickSort -> [1, 2, 3, 5, 6, 4, 7, 9, 10, 11, 13, 14, 12, 8, 15]
+             [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    Total: 44 comparisons + 22 swaps = 66
+    Complexity: n*log2(n) = 15*log2(15) = 58.6034
+
+QuickSort -> [1, 2, 3, 5, 6, 4, 7, 9, 10, 11, 13, 14, 12, 8, 15, 17, 18, 19, 21, 22, 20, 23, 25, 26, 27, 29, 30, 28, 24, 16, 31]
+             [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+    Total: 157 comparisons + 53 swaps = 210
+    Complexity: n*log2(n) = 31*log2(31) = 153.58
+
+QuickSort -> [2, 1]
+             [1, 2]
+    Total: 1 comparisons + 2 swaps = 3
+    Complexity: n^2 = 2^2 = 4
+
+QuickSort -> [2, 3, 1]
+             [1, 2, 3]
+    Total: 3 comparisons + 5 swaps = 8
+    Complexity: n^2 = 3^2 = 9
+
+QuickSort -> [2, 3, 4, 1]
+             [1, 2, 3, 4]
+    Total: 6 comparisons + 9 swaps = 15
+    Complexity: n^2 = 4^2 = 16
+
+QuickSort -> [2, 3, 4, 5, 1]
+             [1, 2, 3, 4, 5]
+    Total: 10 comparisons + 14 swaps = 24
+    Complexity: n^2 = 5^2 = 25
+
+QuickSort -> [2, 3, 4, 5, 6, 1]
+             [1, 2, 3, 4, 5, 6]
+    Total: 15 comparisons + 20 swaps = 35
+    Complexity: n^2 = 6^2 = 36
