@@ -2,11 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-void arrTest(int);
-
-FILE *f;
+void arrTest(int, FILE*);
 
 int main() {
+    FILE *f;
     int m;
     f = fopen("memory-frag-output.txt", "w");
 
@@ -16,11 +15,11 @@ int main() {
 
     fprintf(f, "m, Step 1, Step 2\n");
     for(int i = 1000; i < m; i += 1000)
-        arrTest(i);
+        arrTest(i, f);
 /*     arrTest(m); */
 }
 
-void arrTest(int m) {
+void arrTest(int m, FILE * f) {
     double time_spent;
 
     printf("m is %d\t\t", m);

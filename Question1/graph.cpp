@@ -10,7 +10,8 @@ struct Node {
     Node * dest;
     Node(Stack * i) : v(i) {}
 };
-std::ofstream out("disks-3.txt");
+
+std::ofstream out("test.txt");
 
 class Graph {
 private:
@@ -58,33 +59,38 @@ public:
     }
 
     void Hanoi(int n) {
-        if(!s->v->isEmpty() && n >= 1) {
-            Hanoi(n-1);
+        Hanoi1(n);
+        Hanoi2(n-1);
+    }
+
+    void Hanoi1(int n) {
+        if(n >= 1) {
+            Hanoi1(n-1);
             moveNext(s, a2);
             H1(n-1, a3, a2, a1);
             moveNext(a2,a3);
             if(!s->v->isEmpty())
                 H2(n-1, a1, a2, a3);
-            else
-                Hanoi(n-1);
-        } else if(s->v->isEmpty()) {
-            if(n >= 1) {
-                moveNext(a3, d);
-                H2(n-1, a1, a2, a3);
-                moveNext(a1, a2);
-                H1(n-1, a3, a2, a1);
-                moveNext(a2, a3);
-                Hanoi(n-1);
-            } else
-                moveNext(a3,d);
+        } recursiveCalls++;
+    }
+
+    void Hanoi2(int n) {
+        if(n == 0)
+            moveNext(a3,d);
+        if(n >= 1) {
+            moveNext(a3, d);
+            H2(n-1, a1, a2, a3);
+            moveNext(a1, a2);
+            H1(n-1, a3, a2, a1);
+            moveNext(a2, a3);
+            Hanoi2(n-1);
         } recursiveCalls++;
     }
 
     void H2(int n, Node * begin, Node * aux, Node * end) {
-        if(n == 1) {
+        if(n == 1)
             moveNext(begin, end);
-            return;
-        } else if(n >= 2) {
+        else if(n >= 2) {
             H2(n-1, begin, aux, end);
             moveNext(begin, aux);
             H1(n-1, end, aux, begin);
@@ -94,10 +100,9 @@ public:
     }
 
     void H1(int n, Node * begin, Node * aux, Node * end) {
-        if(n == 1) {
+        if(n == 1)
             moveNext(begin, end);
-            return;
-        } else if(n >= 2) {
+        else if(n >= 2) {
             H2(n-1, begin, end, aux);
             moveNext(begin, end);
             H2(n-1, aux, begin, end);
