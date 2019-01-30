@@ -11,7 +11,7 @@ struct Node {
     Node(Stack * i) : v(i) {}
 };
 
-std::ofstream out("test.txt");
+std::ofstream out("./outputs/test.txt");
 
 class Graph {
 private:
