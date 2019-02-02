@@ -14,9 +14,9 @@ int main() {
     scanf("%d", &m);
 
     fprintf(f, "m, Step 1, Step 2\n");
-    for(int i = 1000; i < m; i += 1000)
-        arrTest(i, f);
-/*     arrTest(m); */
+/*     for(int i = 1000; i < m; i += 1000)
+        arrTest(i, f); */
+    arrTest(m, f);
 }
 
 void arrTest(int m, FILE * f) {

@@ -2,9 +2,6 @@
 #include <iostream>
 #include "graph.cpp"
 
-void towerOfHanoi(int);
-void threeDisks(int, Stack&, Stack&, Stack&);
-
 int main() {
     int n;
     double delay = 0;
