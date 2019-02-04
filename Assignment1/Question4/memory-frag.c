@@ -9,7 +9,6 @@ int main() {
     int m;
     f = fopen("memory-frag-output.txt", "w");
 
-    // User input for m
     printf("\nEnter a value for m to go to: ");
     scanf("%d", &m);
 
