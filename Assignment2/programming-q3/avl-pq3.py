@@ -101,6 +101,7 @@ class AVLTree:
         if root == None:
             self.root = node
             self.last = node
+            node.b = 0
             if animate >= 1:
                 self.rev_order(self.root)
             if animate == 1:
@@ -214,7 +215,6 @@ class AVLTree:
         lh = self.height(node.l)
         rh = self.height(node.r)
 
-        tempb = node.b  # used just to check if balance is correct at the end
         if lh != None and rh != None:
             node.b = lh - rh
         elif lh != None:
@@ -315,17 +315,18 @@ class AVLTree:
 
     def rebalance(self, node):
         if node.b > 1:
-            if node.l.b < 0:
+            if node.l.b < 0: # LR rotation
                 print('LR Rotation Needed')
                 self.right_rotation(self.left_rotation(node.l))
-            else:
+            else: # R rotation
                 self.right_rotation(node)
         elif node.b < -1:
-            if node.r.b > 0:
+            if node.r.b > 0: # RL rotation
                 print('RL Rotation Needed')
                 self.left_rotation(self.right_rotation(node.r))
-            else:
+            else: # L rotation
                 self.left_rotation(node)
+
 
     def point(self, n, left, right):
         if left != None:
@@ -390,7 +391,6 @@ print('Enter the amount of random integers ranging from ' + str(lb) + ' - ' + st
 num = int(input())
 print('No steps or animations (0),\nAnimate (1),\nJust steps (2)?: ', end='', flush=True)
 animate = int(input())
-array = []
 #try:
 #    array = random.sample(range(lb, ub), num)
 #except ValueError:

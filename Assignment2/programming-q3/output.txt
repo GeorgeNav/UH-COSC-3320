@@ -1,0 +1,2 @@
+average insertion time (s), average deletion time (s)
+0.6091, 
