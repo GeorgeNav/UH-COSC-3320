@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'data_structures/Tree.dart';
 import 'math/MyMath.dart';
 import 'dart:io';
@@ -38,7 +37,7 @@ main() {
 
 printOptions() {
   print('(1) Search Tree');
-  print('(2) Binary Tree');
+  print('(2) AVL Tree');
   print('(3) Inverse');
   print('(0) Exit');
 }
