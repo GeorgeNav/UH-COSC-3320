@@ -327,13 +327,6 @@ class AVLTree:
             else: # L rotation
                 self.left_rotation(node)
 
-
-    def point(self, n, left, right):
-        if left != None:
-            n.l = left
-        if right != None:
-            n.r = right
-
     def rev_order(self, node):
         if node is None:
             return
@@ -353,7 +346,7 @@ class AVLTree:
             return 0
         else:
             return 1 + self.get_depth(node.p)
-    
+
     def left_most(self, node):
         if node.l == None:
             return node
@@ -396,7 +389,8 @@ animate = int(input())
 #except ValueError:
 #    print('Sample size exceeded population size.')
 #array = [random.randint(lb,ub) for _ in range(num)]
-array = [random.randint(lb,ub) for _ in range(num)]
+# array = [random.randint(lb,ub) for _ in range(num)]
+array = [8, 1, 2, 6, 5, 3, 4, 7, 10 ,9]
 if len(array) <= 100:
     print(array)
 start = time.time()
