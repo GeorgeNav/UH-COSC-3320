@@ -5,11 +5,11 @@ import 'package:colorize/colorize.dart';
 class MyMath {
   MyMath() {}
 
-  inverse(int aVal, int bVal) {
-    if(aVal.gcd(bVal) != 1)
+  inverse(int a, int b) {
+    if(a.gcd(b) != 1)
       return;
-    var a = aVal > bVal ? aVal : bVal;
-    var b = aVal > bVal ? bVal : aVal;
+/*     var a = aVal > bVal ? aVal : bVal;
+    var b = aVal > bVal ? bVal : aVal; */
     var inverse = [
       [a,1,0,0],
       [b,0,1,0]
