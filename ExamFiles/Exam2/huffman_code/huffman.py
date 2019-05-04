@@ -102,7 +102,7 @@ class Huffman:
         output_file_path = os.path.join(self.dir_path, 'encoded_message.txt')
         with open(output_file_path, 'w') as f:
             for code in encoded_message:
-                #f.write(str(code) + '\n')
+                # f.write(str(code) + '\n')
                 f.write(str(code))
         return encoded_message
 
@@ -148,8 +148,20 @@ class Huffman:
         print()
 
     def print_f_table(self):
+        calculations_str = []
+        calculations = []
+        frequencies = []
         for i, node in enumerate(self.f_table):
             if i < self.f_table_len:
                 print(node.char_info())
+                calculations_str.append(str(node.freq) + '*' + str(len(node.code)))
+                calculations.append(node.freq * len(node.code))
+                frequencies.append(node.freq)
+        for i, s in enumerate(calculations_str):
+            print(s, end='', flush=True)
+            if i < len(calculations_str)-1:
+                print(' + ', end='', flush=True)
+        print(' = ' + str(sum(calculations)/sum(frequencies)))
+
 
 Huffman()
