@@ -1,4 +1,0 @@
-The nodes "T" and "n" will combine to form "X1."
-The nodes "c" and "p" will combine to form "X2."
-The nodes "b" and "w" will combine to form "X3."
-The nodes "k" and "l" will combine to form "X4."
