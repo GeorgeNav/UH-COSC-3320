@@ -75,6 +75,7 @@ Node  S = Node('S'),
     print('\n' + s.pegName + '->' + s.q.first.toString() + '->' + d.pegName);
     d.q.addFirst(s.q.removeFirst());
     printPegs();
+    stdin.readLineSync();
     return true;
   }
 
